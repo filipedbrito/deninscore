@@ -22,6 +22,8 @@ A stack foi escolhida priorizando simplicidade, integração nativa e uso de rec
 - **Looker Studio**: visualização e dashboards
 - **GitHub**: documentação do projeto, versionamento de SQL, modelagem de dados e decisões técnicas
 
+![arquitetura](arquitetura.png)
+
 Toda a execução ocorre no ecossistema do Google Cloud, aproveitando a integração nativa entre Google Sheets, BigQuery e Looker Studio. O GitHub é utilizado exclusivamente como repositório de documentação e organização do projeto, não sendo necessário executar código diretamente a partir dele.
 
 ## Objetivos do projeto
@@ -31,3 +33,12 @@ Toda a execução ocorre no ecossistema do Google Cloud, aproveitando a integra�
 - Praticar modelagem de dados e SQL em um cenário real
 - Servir como projeto pessoal de portfólio em dados
 - Gerar valor e entretenimento para o grupo da pelada
+
+## Fonte de dados
+
+Os dados são preenchidos manualmente após cada partida em uma planilha do Google Sheets.
+Essa planilha é utilizada como fonte de dados bruta (raw), sendo conectada diretamente ao BigQuery por meio de uma tabela externa.
+
+## Camada Raw
+
+A camada raw é composta por uma tabela externa no BigQuery, que aponta diretamente para a planilha do Google Sheets. Nessa etapa, não há aplicação de regras de negócio, apenas inferência automática de schema e tipagem básica.
