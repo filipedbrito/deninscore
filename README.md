@@ -39,6 +39,33 @@ Toda a execução ocorre no ecossistema do Google Cloud, aproveitando a integra�
 Os dados são preenchidos manualmente após cada partida em uma planilha do Google Sheets.
 Essa planilha é utilizada como fonte de dados bruta (raw), sendo conectada diretamente ao BigQuery por meio de uma tabela externa.
 
-## Camada Raw
+## 🔹Camada Raw (`deninscore_raw`)
 
 A camada raw é composta por uma tabela externa no BigQuery, que aponta diretamente para a planilha do Google Sheets. Nessa etapa, não há aplicação de regras de negócio, apenas inferência automática de schema e tipagem básica.
+
+Tabela principal: deninscore_raw.raw_participacoes
+
+## 🔹Camada Silver (`deninscore_silver`)
+
+Camada de padronização e organização dos dados.
+
+- Normalização de strings
+- Tipagem explícita de campos numéricos e booleanos
+- Padronização de valores categóricos
+- Preparação para métricas
+
+Tabela (view) principal: deninscore_silver.participacoes
+
+Granularidade:
+> Uma linha representa um atleta participando de uma partida.
+
+## 🔹Camada Gold (`deninscore_gold`)
+
+Camada semântica com métricas agregadas e regras de negócio.
+
+- Estatísticas por atleta
+- Rankings
+- Aproveitamento
+- Métricas derivadas para consumo no Looker Studio
+
+Essa camada é a fonte oficial dos dashboards.
