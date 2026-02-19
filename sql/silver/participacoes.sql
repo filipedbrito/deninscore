@@ -19,7 +19,7 @@ select
         else null 
     end as pontos_partidas,
     case
-        when capitao = true and resultado = 'V' then 1
+        when capitao = true and resultado = 'V' then 3
         when capitao = true and resultado = 'D' then -1
         else 0
     end as pontos_capitao,
