@@ -7,7 +7,8 @@ select
     upper(trim(time)) as time,
     upper(trim(resultado)) as resultado,
     safe_cast(gols_marcados as int64) as gols_marcados,
-    safe_cast(gols_sofridos as int64) as gols_sofridos,
+    safe_cast(assistencias as int64) as assistencias,
+    safe_cast(gols_sofridos_GC as int64) as gols_sofridos,
     cast(capitao as bool) as capitao,
     cast(motm as bool) as motm,
     cast(botm as bool) as botm,
@@ -19,7 +20,7 @@ select
         else null 
     end as pontos_partidas,
     case
-        when capitao = true and resultado = 'V' then 3
+        when capitao = true and resultado = 'V' then 2
         when capitao = true and resultado = 'D' then -1
         else 0
     end as pontos_capitao,
@@ -27,4 +28,4 @@ select
     if(botm = true, -1, 0) as pontos_botm,
     if(totw = true, 1, 0) as pontos_totw
 from
-    deninscore_raw.raw_participacoes
+    deninscore_raw.participacoes_raw
