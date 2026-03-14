@@ -1,6 +1,8 @@
 create or replace view deninscore_silver.participacoes as
 select
     date(data) as data_partida,
+    dense_rank() over (order by date(data)) as seq_partida,
+    row_number() over (partition by atleta order by date(data)) as seq_atleta,
     trim(atleta) as atleta,
     lower(trim(posicao)) as posicao,
     lower(trim(tipo)) as tipo,
