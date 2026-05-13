@@ -119,24 +119,3 @@ Exemplos de análises implementadas ou planejadas:
 - estatísticas por mês ou temporada  
 
 Essas consultas podem ser reutilizadas para diferentes períodos ou recortes temporais conforme necessário.
-
----
-
-# Estrutura do repositório
-
-
-Cada arquivo SQL representa uma análise ou métrica utilizada para gerar conteúdos ou insights sobre a pelada.
-
-Exemplos de análises implementadas ou planejadas:
-
-- ranking de pontuação geral  
-- aproveitamento por atleta  
-- artilheiros por período  
-- jogadores com mais MOTM  
-- jogadores com mais BOTM  
-- histórico de capitães  
-- confronto entre capitães  
-- desempenho de atletas que jogam juntos  
-- estatísticas por mês ou temporada  
-
-Essas consultas podem ser reutilizadas para diferentes períodos ou recortes temporais conforme necessário.
