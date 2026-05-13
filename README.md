@@ -140,26 +140,3 @@ Exemplos de análises implementadas ou planejadas:
 - estatísticas por mês ou temporada  
 
 Essas consultas podem ser reutilizadas para diferentes períodos ou recortes temporais conforme necessário.
-
----
-
-# Estrutura do repositório
-
-
-```
-deninscore
-│
-├── arquitetura.png
-├── README.md
-│
-└── sql
-│
-├── silver
-│ └── participacoes.sql
-│
-└── analysis
-├── ranking_pontuacao.sql
-├── artilharia.sql
-├── botm_ranking.sql
-├── capitaes_confrontos.sql
-└── jogadores_que_jogam_juntos.sql
