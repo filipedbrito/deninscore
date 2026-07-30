@@ -1,6 +1,9 @@
 # Documentação pessoal de planejamento (PRDs, quebra de issues) — não faz parte do repo público
 docs/
 
+# Dependências instaladas pelo workspace do Dataform (@dataform/core etc)
+node_modules/
+
 # Variáveis de ambiente e segredos
 .env
 .env.*
