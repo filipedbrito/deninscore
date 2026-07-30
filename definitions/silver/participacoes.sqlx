@@ -36,4 +36,4 @@ select
     if(botm = true, -1, 0) as pontos_botm,
     if(totw = true, 1, 0) as pontos_totw
 from
-    ${ref("participacoes_raw")}
+    ${ref("participacoes_sheets")}
