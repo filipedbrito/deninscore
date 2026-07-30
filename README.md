@@ -122,3 +122,9 @@ Exemplos de análises implementadas ou planejadas:
 - estatísticas por mês ou temporada  
 
 Essas consultas podem ser reutilizadas para diferentes períodos ou recortes temporais conforme necessário.
+
+---
+
+# Próximos passos
+
+Com a camada silver já gerenciada pelo Dataform, a próxima fase do projeto é uma ferramenta de consulta self-serve pra quem ajuda a tocar o conteúdo do Instagram: um menu na própria planilha de dados, com opções pra consultar confronto entre dois atletas e histórico individual, retornando um texto pronto pra copiar e colar — sem precisar escrever SQL ou ter acesso ao BigQuery.
