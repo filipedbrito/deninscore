@@ -28,6 +28,7 @@ A stack foi escolhida priorizando simplicidade, integração nativa e uso de rec
 
 - **Google Sheets** → entrada manual dos dados após cada partida  
 - **BigQuery** → armazenamento e modelagem analítica dos dados  
+- **Dataform** (nativo do BigQuery) → fonte de verdade versionada da camada raw/silver, deployada direto do repositório (`workflow_settings.yaml` + `definitions/`)  
 - **GitHub** → documentação do projeto, versionamento de SQL e organização das análises  
 
 ![arquitetura](arquitetura.png)
@@ -87,6 +88,8 @@ Principais transformações:
 - Preparação da base para análises  
 
 Tabela principal (view): `deninscore_silver.participacoes`
+
+Definida e deployada via **Dataform** — fonte de verdade em [`definitions/silver/participacoes.sqlx`](definitions/silver/participacoes.sqlx), não mais como cópia manual em `/sql`.
 
 
 Granularidade:

@@ -1,0 +1,17 @@
+# Documentação pessoal de planejamento (PRDs, quebra de issues) — não faz parte do repo público
+docs/
+
+# Variáveis de ambiente e segredos
+.env
+.env.*
+*.pem
+*.key
+
+# Credenciais do Google Cloud / clasp
+# (a autenticação de Dataform e clasp roda via login SSO/OAuth do navegador,
+# então normalmente não há arquivo de credencial parado no repo — isso é
+# só uma trava defensiva caso algum token local acabe caindo aqui)
+.clasprc.json
+credentials.json
+service-account*.json
+*.serviceaccount.json

@@ -1,4 +1,10 @@
-create or replace view deninscore_silver.participacoes as
+config {
+  type: "view",
+  schema: "deninscore_silver",
+  name: "participacoes",
+  description: "Uma linha por atleta por partida. Normalização de strings, tipagem explícita e cálculo de pontos (partida/capitania/MOTM/BOTM/TOTW)."
+}
+
 select
     date(data) as data_partida,
     dense_rank() over (order by date(data)) as seq_partida,
@@ -15,11 +21,11 @@ select
     cast(motm as bool) as motm,
     cast(botm as bool) as botm,
     cast(totw as bool) as totw,
-        case
+    case
         when resultado = 'V' then 3
         when resultado = 'E' then 1
         when resultado = 'D' then 0
-        else null 
+        else null
     end as pontos_partidas,
     case
         when capitao = true and resultado = 'V' then 2
@@ -30,4 +36,4 @@ select
     if(botm = true, -1, 0) as pontos_botm,
     if(totw = true, 1, 0) as pontos_totw
 from
-    deninscore_raw.participacoes_raw
+    ${ref("participacoes_raw")}
